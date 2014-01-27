@@ -27,6 +27,7 @@ class RawSeqFileProperties {
 class RawSeq {
     public:
         RawSeq(const char* fname);
+        ~RawSeq();
 
         RawSeqFileProperties sniff_limits();
 
@@ -34,9 +35,7 @@ class RawSeq {
 
         unsigned int line_width;
         unsigned int lines_per_read;
-
     private:
-
         const char* fname;
 
         std::fstream raw_fs;

@@ -14,6 +14,11 @@ RawSeq::RawSeq(const char* fname) {
 };
 
 
+RawSeq::~RawSeq() {
+    raw_fs.close();
+}
+
+
 RawSeqRead::RawSeqRead(unsigned int max_header_size, unsigned int max_read_size) {
     this->header = new char[max_header_size];
     this->read = new char[max_read_size];
